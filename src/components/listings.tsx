@@ -20,7 +20,7 @@ type Listing = {
   images: { src: string; label: string }[];
 };
 
-const LISTINGS: Listing[] = [
+const LISTINGS: [Listing, Listing, Listing] = [
   {
     title: "Tidewater House",
     place: "Wilmington · New Hanover County",

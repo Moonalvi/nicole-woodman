@@ -1,24 +1,64 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { SiteNav } from "@/components/site-nav";
+import { Hero } from "@/components/hero";
+import { AboutAreas } from "@/components/about-areas";
+import { Listings } from "@/components/listings";
+import { Proof } from "@/components/proof";
+import { Testimonials } from "@/components/testimonials";
+import { ContactFooter } from "@/components/contact-footer";
+
+const TITLE = "Nicole Woodman | North Carolina Realtor";
+const DESCRIPTION =
+  "Nicole Woodman, REALTOR® with Keller Williams Innovate — buying and selling homes across Brunswick, New Hanover, Pender, Onslow, Harnett and Robeson counties.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "RealEstateAgent",
+          name: "Nicole Woodman",
+          telephone: "+1-910-258-9676",
+          email: "nicoleowenshall@gmail.com",
+          worksFor: { "@type": "Organization", name: "Keller Williams Innovate" },
+          areaServed: [
+            "Brunswick County, NC",
+            "New Hanover County, NC",
+            "Pender County, NC",
+            "Onslow County, NC",
+            "Harnett County, NC",
+            "Robeson County, NC",
+            "North Carolina",
+          ],
+          sameAs: ["https://www.facebook.com/NicoleOwensHall"],
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main>
+      <SiteNav />
+      <Hero />
+      <AboutAreas />
+      <Listings />
+      <Proof />
+      <Testimonials />
+      <ContactFooter />
+    </main>
   );
 }
