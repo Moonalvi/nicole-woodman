@@ -3,10 +3,10 @@ import { CONTACT } from "@/lib/contact";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-32 sm:pt-40">
+    <section id="top" className="relative overflow-hidden pt-28 sm:pt-32">
       {/* Golden-ratio split: text 61.8%, cropped architecture 38.2% */}
       <div className="mx-auto grid max-w-[1500px] gap-12 px-6 lg:grid-cols-[1.618fr_1fr] lg:gap-0 lg:px-10">
-        <div className="flex flex-col justify-center lg:py-28 lg:pr-16">
+        <div className="flex flex-col justify-center lg:pb-16 lg:pr-16">
           <p className="eyebrow text-crimson">North Carolina Real Estate</p>
           <h1 className="display mt-8 text-[clamp(2.9rem,7.4vw,6.6rem)]">
             Coastal homes,
@@ -40,7 +40,7 @@ export function Hero() {
             width={1408}
             height={1760}
             alt="Modern coastal North Carolina residence at golden hour"
-            className="h-[62vh] w-full object-cover object-left lg:h-[86vh]"
+            className="h-[58vh] w-full object-cover object-left lg:h-[74vh]"
           />
           <div className="glass-dark absolute bottom-6 left-0 -translate-x-6 rounded-2xl px-6 py-5 lg:-translate-x-16">
             <p className="eyebrow opacity-70">Serving</p>

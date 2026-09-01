@@ -39,7 +39,7 @@ export function AboutAreas() {
         </div>
 
         {/* Wide, low county block with cropped edge */}
-        <div className="border-t border-hairline bg-paper-deep px-6 py-8 md:col-span-7 md:col-start-6 md:-ml-16 md:px-10">
+        <div className="border-t border-hairline bg-paper-deep px-6 py-8 md:col-span-7 md:col-start-6 md:px-10">
           <p className="eyebrow text-ink-soft">Areas served</p>
           <ul className="mt-6 grid gap-x-10 gap-y-2 sm:grid-cols-2">
             {COUNTIES.map((c) => (
